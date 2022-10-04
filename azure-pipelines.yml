@@ -29,7 +29,7 @@ stages:
             name: key
             displayName: Download signing key
             inputs:
-              secureFile: 'key.jks'
+              secureFile: 'keystore.jks'
 
           - task: Bash@3
             displayName: Copy config files
@@ -40,7 +40,7 @@ stages:
                 cp $(key.secureFilePath) $(Build.SourcesDirectory)/android/keystores/keystore.jks
                 
                 echo "key.properties copied to $(Build.SourcesDirectory)/android/keystores/key.properties"
-                echo "key.jks copied to $(Build.SourcesDirectory)/android/keystores/keystore.jks"
+                echo "keystore.jks copied to $(Build.SourcesDirectory)/android/keystores/keystore.jks"
           - task: FlutterInstall@0
             displayName: "Install Flutter SDK"
             inputs:
