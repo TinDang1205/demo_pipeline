@@ -40,7 +40,7 @@ stages:
                 cp $(key.secureFilePath) $(Build.SourcesDirectory)/android/keystores/keystore.jks
                 
                 echo "key.properties copied to $(Build.SourcesDirectory)/android/keystores/key.properties"
-                echo "key.jks copied to $(Build.SourcesDirectory)/android/keystores/key.jks"
+                echo "key.jks copied to $(Build.SourcesDirectory)/android/keystores/keystore.jks"
           - task: FlutterInstall@0
             displayName: "Install Flutter SDK"
             inputs:
